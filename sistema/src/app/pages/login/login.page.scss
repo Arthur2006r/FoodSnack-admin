@@ -1,0 +1,44 @@
+.ion-color-primary {
+    --ion-color-base: var(--ion-color-primary);
+    --ion-color-base-rgb: var(--ion-color-primary-rgb);
+    --ion-color-contrast: var(--ion-color-primary-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb);
+    --ion-color-shade: var(--ion-color-primary-shade);
+    --ion-color-tint: var(--ion-color-primary-tint);
+}
+
+
+.imagem {
+    height: 27vh;
+    width: 90vw;
+    text-align: center;
+}
+
+.textoCaixa {
+    text-align: center;
+}
+
+.texto1 {
+    font-size: 20px;
+    font-weight: 900; 
+    color: #393e46;
+}
+
+.texto2 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: -1vh; 
+    color: rgba(0, 0, 0, 0.468);
+}
+
+.caixaForms {
+    margin-top: 6vh;
+}
+
+.botaoEntrar {
+    margin-top: 5vh;
+}
+
+.item2 {
+    margin-top: 3vh;
+}

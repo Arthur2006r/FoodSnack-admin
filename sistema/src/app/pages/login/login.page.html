@@ -1,0 +1,29 @@
+<ion-header [translucent]="true"></ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-img src="/assets/imagens/logoSemFundo.png" alt="Logo sem fundo" class="imagem"></ion-img>
+
+  <ion-text class="textoCaixa">
+    <p class="texto1">Sistema do Administrador</p>
+  </ion-text>
+
+  <ion-text class="textoCaixa">
+    <p class="texto2">Faça o login para acessar o sistema</p>
+  </ion-text>
+
+  <form [formGroup]="formGroup" (ngSubmit)="autenticar()" class="caixaForms">
+    <ion-item>
+      <ion-input label="Código de Segurança" label-placement="floating" fill="outline" placeholder="Insira aqui"
+        type="text" formControlName="codigo"></ion-input>
+    </ion-item>
+    <ion-item class="item2">
+      <ion-input label="Senha" label-placement="floating" fill="outline" placeholder="Insira aqui" type="password"
+        formControlName="senha"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid" class="botaoEntrar">
+      Entrar
+    </ion-button>
+  </form>
+
+</ion-content>

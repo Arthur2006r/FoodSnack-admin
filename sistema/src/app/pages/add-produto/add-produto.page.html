@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/produtos" text="Cancelar"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{modo}} de Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="formGroup" (ngSubmit)="salvar()">
+    <ion-label>Imagem do Produto</ion-label>
+    <div class="caixaImagem">
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" class="image-input"
+        formControlName="imagem" />
+      <img class="image-container" [src]="imagePreview" alt="Image Preview" class="image-preview" />
+    </div>
+
+    <ion-item class="input-item">
+      <ion-input label="Nome" label-placement="floating" fill="outline" type="text" formControlName="nome"
+        placeholder="digite o nome"></ion-input>
+    </ion-item>
+
+    <ion-item class="input-item">
+      <ion-textarea label="Descrição" label-placement="floating" fill="outline" formControlName="descricao"
+        placeholder="Digite a descrição"></ion-textarea>
+    </ion-item>
+
+    <div class="preco-tipo-container">
+      <ion-item class="input-item">
+        <ion-input label="Preço" label-placement="floating" fill="outline" type="text" formControlName="preco"
+          placeholder="R$" [maskito]="precoMask" [maskitoElement]="predicate"></ion-input>
+      </ion-item>
+
+      <ion-item class="input-item tipo-item">
+        <ion-select label="Tipo" label-placement="floating" fill="outline" formControlName="tipo"
+          placeholder="Selecione o tipo">
+          <ion-select-option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+    <ion-button type="submit" expand="block" color="primary" [disabled]="!formGroup.valid">Salvar</ion-button>
+  </form>
+</ion-content>

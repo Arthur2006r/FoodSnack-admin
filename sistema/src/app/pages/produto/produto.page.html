@@ -1,0 +1,34 @@
+<ion-header>
+  <div id="topo">
+    <div id="caixaBotaoVoltar">
+      <ion-buttons slot="start">
+        <ion-back-button class="botaoVoltar" defaultHref="/produtos" text=""></ion-back-button>
+      </ion-buttons>
+    </div>
+    <div id="caixaBotaoEditar">
+      <div class="botaoEditar" [routerLink]="['/add-produto', produto.id]">
+        <ion-icon name="create"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    <p class="nomeProduto">{{produto.nome}}</p>
+  </ion-text>
+  <ion-text>
+    <p class="descricaoProduto">{{produto.descricao}}</p>
+  </ion-text>
+  <ion-text>
+    <p class="precoProduto">R$ {{produto.preco}}</p>
+  </ion-text>
+</ion-content>
+
+<ion-footer translucent={true}>
+  <ion-toolbar class="botaoExcluir">
+    <ion-button color="danger" (click)="excluir()">
+      Excluir Produto
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
